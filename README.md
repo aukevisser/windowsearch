@@ -9,4 +9,6 @@ The method to reconstruct the irrigation imprint on temperature relies on three 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;T&space;=&space;\alpha_1&space;\times&space;\Delta&space;f_{irr}&space;&plus;&space;\alpha_2&space;\times&space;lat.&space;&plus;&space;\alpha_3&space;\times&space;lon.&space;&plus;&space;\alpha_4&space;\times&space;elev." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;T&space;=&space;\alpha_1&space;\times&space;\Delta&space;f_{irr}&space;&plus;&space;\alpha_2&space;\times&space;lat.&space;&plus;&space;\alpha_3&space;\times&space;lon.&space;&plus;&space;\alpha_4&space;\times&space;elev." title="\Delta T = \alpha_1 \times \Delta f_{irr} + \alpha_2 \times lat. + \alpha_3 \times lon. + \alpha_4 \times elev." /></a>
 
-3. **Irrigation impact reconstruction:**
+3. **Irrigation impact reconstruction:** the multi-linear regression coefficient for irrigation obtained from the above equation is multiplied by the change in irrigated fraction in the cell of interest:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;T_{irr}&space;=&space;\alpha_1&space;\times&space;\Delta&space;f_{irr}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;T_{irr}&space;=&space;\alpha_1&space;\times&space;\Delta&space;f_{irr}" title="\Delta T_{irr} = \alpha_1 \times \Delta f_{irr}" /></a>
