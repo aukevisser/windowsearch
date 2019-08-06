@@ -22,8 +22,7 @@ The algorithm files all contain one function, which can be called from other alg
 - *calc_irr_diff.py* generates a three-dimensional array of irrigation maps for the reference and present-day periods. 
 - *calc_irr_impact_regression.py* contains a function that calculates irrigation-induced temperature change (<a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;T_{irr}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;T_{irr}" title="\Delta T_{irr}" /></a>) using the regression-based method based on a range of user-specified parameter choices.
 
-The parameters that are used in the call of *calc_irr_impact_regression* are:
-
+The parameters that are used in the function call of *calc_irr_impact_regression* are:
 
 - *yr_start1, yr_end1, yr_start2, yr_end2* can be used to determine the reference and present-day period (for CRU, these parameters do not have a function for MODIS).
 - *method*: chosen option should be 'regression'
