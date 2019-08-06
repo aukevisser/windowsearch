@@ -29,3 +29,10 @@ The parameters that are used in the function call of *calc_irr_impact_regression
 - *thres_irr* is the irrigated fraction threshold used for pixel selection
 - *response* can be 'PC/PD' or 'PD', depending on whether pixel selection should occur by changes in the irrigated fraction, or based on the present-day irrigated fraction.
 
+## Data pre-processing
+
+### Historical Irrigation Dataset
+This dataset contains spatial information on the Area Equipped for Irrigation (AEI) at a resolution of 5 arcmin [Siebert et al., 2015](https://www.hydrol-earth-syst-sci.net/19/1521/2015/). The window searching analysis on the irrigated fraction, which is calculated from AEI using a bash script containing CDO commands (*HID_regrid.sh*).
+
+### Temperature datasets
+Temperature datasets can in principle be used as long as they are can be accessed via Python. 
