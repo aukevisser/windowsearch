@@ -25,3 +25,8 @@ The algorithm files all contain one function, which can be called from other alg
 The parameters that are used in the call of *calc_irr_impact_regression* are:
 
 
+- *yr_start1, yr_end1, yr_start2, yr_end2* can be used to determine the reference and present-day period (for CRU, these parameters do not have a function for MODIS).
+- *method*: chosen option should be 'regression'
+- *thres_irr* is the irrigated fraction threshold used for pixel selection
+- *response* can be 'PC/PD' or 'PD', depending on whether pixel selection should occur by changes in the irrigated fraction, or based on the present-day irrigated fraction.
+
