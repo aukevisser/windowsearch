@@ -14,3 +14,14 @@ The method to reconstruct the irrigation imprint on temperature relies on three 
   <a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;T_{irr}&space;=&space;\alpha_1&space;\times&space;\Delta&space;f_{irr}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;T_{irr}&space;=&space;\alpha_1&space;\times&space;\Delta&space;f_{irr}" title="\Delta T_{irr} = \alpha_1 \times \Delta f_{irr}" /></a>
 
 The algorithm is desinged to capture the direct cooling effect of irrigation due to an enhanced surface latente energy flux. The secondary effects of irrigation such as enhanced atmospheric moisture content, potentially leading to downwind precipitation and altered monsoon circulation (Puma & Cook, 2010; Guimberteau et al., 2012; Thiery et al., 2017) are potential confounding factors because they could act more or less heterogeneously in the search window. Additionally, this method does not correct for possible dependence between spatial predictors. For example, most irrigation occurs in low-lying areas. This spatial dependence could reduce the regression coefficient for irrigation and thus <a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;T_{irr}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;T_{irr}" title="\Delta T_{irr}" /></a>.
+
+## Code structure
+The algorithm files all contain one function, which can be called from other algorithm- or plotting scripts. The algorithm is written in the following three files:
+
+- *extract_T_irr.py* extracts the temperature signal for the reference period and the present-day period, and stores it in a three-dimensional (2 x n_lat x n_lon) array. When applying the search window algorithm to determine spatial irrigation effects (e.g. in the case of MODIS), the reference period consists only of zeros. 
+- *calc_irr_diff.py* generates a three-dimensional array of irrigation maps for the reference and present-day periods. 
+- *calc_irr_impact_regression.py* contains a function that calculates irrigation-induced temperature change (<a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;T_{irr}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;T_{irr}" title="\Delta T_{irr}" /></a>) using the regression-based method based on a range of user-specified parameter choices.
+
+The parameters that are used in the call of *calc_irr_impact_regression* are:
+
+
