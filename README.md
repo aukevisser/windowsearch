@@ -32,7 +32,7 @@ The parameters that are used in the function call of *calc_irr_impact_regression
 ## Data pre-processing
 
 ### Historical Irrigation Dataset
-This dataset contains spatial information on the Area Equipped for Irrigation (AEI) at a resolution of 5 arcmin [Siebert et al., 2015](https://www.hydrol-earth-syst-sci.net/19/1521/2015/). The window searching analysis on the irrigated fraction, which is calculated from AEI using a bash script containing CDO commands (*HID_regrid.sh*).
+This dataset contains spatial information on the Area Equipped for Irrigation (AEI) at a resolution of 5 arcmin [Siebert et al., 2015](https://www.hydrol-earth-syst-sci.net/19/1521/2015/). The window searching analysis is based on the irrigated fraction, which is calculated from AEI using a bash script containing CDO commands (*HID_regrid.sh*). This script is additionally used to regrid irrigated fraction data to the (coarser) temperature grid using (second-order) conservative remapping.
 
 ### Temperature datasets
 Temperature datasets can in principle be used as long as they are can be accessed via Python. 
