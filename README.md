@@ -32,6 +32,7 @@ The parameters that are used in the function call of *calc_irr_impact_regression
 More detail can be found in [this report](https://github.com/aukevisser/windowsearch/blob/master/Final_Report_Internship_ETH.pdf).
 
 ## Data pre-processing
+The analysis works on a dataset for irrigation extent, and a climate dataset. These data must be used at the coarsest common grid.
 
 ### Historical Irrigation Dataset
 This dataset contains spatial information on the Area Equipped for Irrigation (AEI) at a resolution of 5 arcmin [Siebert et al., 2015](https://www.hydrol-earth-syst-sci.net/19/1521/2015/). The window searching analysis is based on the irrigated fraction, which is calculated from AEI using a bash script containing CDO commands (*HID_regrid.sh*). This script is additionally used to regrid irrigated fraction data to the (coarser) temperature grid using (second-order) conservative remapping.
