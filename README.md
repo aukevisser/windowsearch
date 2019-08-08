@@ -45,4 +45,4 @@ Temperature datasets can in principle be used as long as they are can be accesse
 - Instructions for how to perform the analysis for another dataset
   - modify *calc_irr_diff.py* and *extract_T_irr.py*
   - Add if statement for algorithm in *calc_irr_impact_regr.py*
-  - Elevation data
+  - Elevation data: [ETOPO1](https://www.ngdc.noaa.gov/mgg/global/global.html)
