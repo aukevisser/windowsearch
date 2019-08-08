@@ -39,3 +39,7 @@ This dataset contains spatial information on the Area Equipped for Irrigation (A
 
 ### Temperature datasets
 Temperature datasets can in principle be used as long as they are can be accessed via Python. If a temperature dataset has a coarser spatial resolution than the HID data (e.g. MODIS), it should be regridded to the HID resolution.
+
+## To be added:
+
+- Instructions for how to perform the analysis for another dataset
