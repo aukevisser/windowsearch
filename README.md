@@ -29,6 +29,8 @@ The parameters that are used in the function call of *calc_irr_impact_regression
 - *thres_irr* is the irrigated fraction threshold used for pixel selection
 - *response* can be 'PC/PD' or 'PD', depending on whether pixel selection should occur by changes in the irrigated fraction, or based on the present-day irrigated fraction.
 
+More detail can be found in this report.
+
 ## Data pre-processing
 
 ### Historical Irrigation Dataset
