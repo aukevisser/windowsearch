@@ -48,9 +48,9 @@ Firstly, ensure that all datasets are regridded to a common grid at the coarsest
 
 The algorithm assumes that irrigation data is specified in the form of an 'irrigated fraction' between 0 and 1. This can be calculated from the HID data, specified as an 'area equipped for irrigation' (AEI) per grid cell, as using CDO:
 
-'''console
+```console
 cdo -f nc div mulc,10000 $indir$infile -gridarea $indir/$infile $outdir/$outfile
-'''
+```
 
 ## *extract_T_irr.py*
 
