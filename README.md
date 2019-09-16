@@ -40,7 +40,21 @@ This dataset contains spatial information on the Area Equipped for Irrigation (A
 ### Temperature datasets
 Temperature datasets can in principle be used as long as they are can be accessed via Python. If a temperature dataset has a coarser spatial resolution than the HID data (e.g. MODIS), it should be regridded to the HID resolution.
 
-## To be added:
+# Applying the algorithm to other datasets
+
+Firstly, ensure that all datasets are regridded to a common grid at the coarsest resolution of the irrigated fraction and response variable input pair. For example, if the chosen response variable is CRU surface temperature (at 0.5 degree resolution), the HID data must be regridded to the CRU domain. However, for higher-resolution datasets such as MODIS LST (3 arc min), the response variable data must be regridded to the HID domain. The regridding can be done 
+
+## *calc_irr_diff.py*
+
+The algorithm assumes that irrigation data is specified in the form of an 'irrigated fraction' between 0 and 1. This can be calculated from the HID data, specified as an 'area equipped for irrigation' (AEI) per grid cell, as using CDO:
+
+'''shell
+cdo -f nc div mulc,10000 $indir$infile -gridarea $indir/$infile $outdir/$outfile
+'''
+
+## *extract_T_irr.py*
+
+## *calc_irr_impact_regr.py*
 
 - Instructions for how to perform the analysis for another dataset
   - modify *calc_irr_diff.py* and *extract_T_irr.py*
