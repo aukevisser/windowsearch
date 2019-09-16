@@ -46,17 +46,19 @@ Firstly, ensure that all datasets are regridded to a common grid at the coarsest
 
 ## *calc_irr_diff.py*
 
-The algorithm assumes that irrigation data is specified in the form of an 'irrigated fraction' between 0 and 1. This can be calculated from the HID data, specified as an 'area equipped for irrigation' (AEI) per grid cell, as using CDO:
+The algorithm assumes that irrigation data is specified in the form of an 'irrigated fraction' between 0 and 1. This can be calculated from the HID data, specified as an 'area equipped for irrigation' (AEI) per grid cell using CDO:
 
 ```console
-cdo -f nc div mulc,10000 $indir$infile -gridarea $indir/$infile $outdir/$outfile
+cdo -f nc div mulc,10000 [HID path] -gridarea [HID path] [output path]
 ```
+
+After regridding HID data, create an extra if statement in *calc_irr_diff.py*, specifying which response (i.e. temperature) dataset is used in the analysis. If the transient response of irrigation must be calculated, calculate the weighted-average irrigated fraction in the reference period and the present-day period (analogous to 'CRU' in the script). If only looking at the spatial effect, set the irrigated fraction in the reference period to 0, and calculate the present-day irrigated fraction as an average over the present-day period of interest.
 
 ## *extract_T_irr.py*
 
+Fill the 2 x n_lat x n_lon array with mean values in the reference and response periods. When only analyzing the spatial impact, the values in the reference period should be set to 0.
+
 ## *calc_irr_impact_regr.py*
 
-- Instructions for how to perform the analysis for another dataset
-  - modify *calc_irr_diff.py* and *extract_T_irr.py*
-  - Add if statement for algorithm in *calc_irr_impact_regr.py*
-  - Elevation data: either from the model, or, when higher resolution is required, [ETOPO1](https://www.ngdc.noaa.gov/mgg/global/global.html) (with Shell script that performs a 2nd order conservative remapping with CDO).
+### Elevation data
+Elevation data are taken from [ETOPO1](https://www.ngdc.noaa.gov/mgg/global/global.html) and should be regridded (e.g. 2nd order conservative remapping with CDO) to the desired resolution. 
