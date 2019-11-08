@@ -71,7 +71,9 @@ def calc_irr_impact_regr(datasource,temp_product,response,t_res,thres_irr,def_re
       region_eff  = np.zeros((T_diff.shape[0],df_irr.shape[0],df_irr.shape[1])) #average dT_tot in the big box
       lats        = np.tile(lat,(lon.shape[0],1)).T
       lons        = np.tile(lon,(lat.shape[0],1))
-      defrate     = calc_tf_diff(datasource,response,yr_start1,yr_end1,yr_start2,yr_end2) #
+      #AV_20191108+: only calculate the deforestation rate when the deforestation switch is set to True.
+      if def_regr:
+        defrate     = calc_tf_diff(datasource,response,yr_start1,yr_end1,yr_start2,yr_end2) #
       or_file     = nc.Dataset('/net/exo/landclim/wthiery/observational_analysis/Data/CLMdata_topography.0.5deg.nc','r') #Find elevation file
       orog        = or_file.variables['HSURF'][:] #extract elevation and store in array
       
@@ -160,7 +162,9 @@ def calc_irr_impact_regr(datasource,temp_product,response,t_res,thres_irr,def_re
       region_eff = np.zeros((df_irr.shape[0],df_irr.shape[1]))
       lats = np.tile(lat,(lon.shape[0],1)).T
       lons = np.tile(lon,(lat.shape[0],1))
-      defrate = calc_tf_diff(datasource,response,yr_start1,yr_end1,yr_start2,yr_end2)
+      #AV_20191108+: only calculate the deforestation rate when the deforestation switch is set to True.
+      if def_regr:
+        defrate = calc_tf_diff(datasource,response,yr_start1,yr_end1,yr_start2,yr_end2)
       or_file = nc.Dataset('/net/exo/landclim/wthiery/observational_analysis/Data/CLMdata_topography.0.5deg.nc','r')
       orog = or_file.variables['HSURF'][:]
       
